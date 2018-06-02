@@ -1,15 +1,19 @@
 package com.springframework.controllers;
 
 import com.springframework.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
-public class GetterInjectedController {
+@Controller
+public class SetterInjectedController {
 
     private GreetingService greetingService;
 
-    String sayHello() {
+    public String sayHello() {
         return greetingService.sayGreeting();
     }
 
+    @Autowired //Setter based injection
     void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
