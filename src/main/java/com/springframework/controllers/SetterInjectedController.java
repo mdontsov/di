@@ -15,7 +15,7 @@ public class SetterInjectedController {
     }
 
     @Autowired //Setter based injection
-    void setGreetingService(@Qualifier("getterGreetingService") GreetingService greetingService) {
+    void setGreetingService(@Qualifier("setterGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 }

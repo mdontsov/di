@@ -14,9 +14,9 @@ public class DiApplication {
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(DiApplication.class, args);
 
-        CustomController controller = (CustomController) context.getBean("customController"); //Bean instantiation
-        controller.hello();
+        CustomController customController = (CustomController) context.getBean("customController"); //Bean instantiation
 
+        System.out.println(customController.hello());
         System.out.println(context.getBean(PropertyInjectedController.class).sayHello());
         System.out.println(context.getBean(SetterInjectedController.class).sayHello());
         System.out.println(context.getBean(ConstructorInjectedController.class).sayHello());
