@@ -1,6 +1,6 @@
 package com.springframework.controllers;
 
-import com.springframework.services.GreetingServiceImpl;
+import com.springframework.services.PropertyGreetingServiceImpl;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,11 +12,11 @@ public class PropertyInjectedControllerTest {
     @Before
     public void setUp() {
         propertyInjectedController = new PropertyInjectedController();
-        propertyInjectedController.greetingServiceImpl = new GreetingServiceImpl();
+        propertyInjectedController.greetingService = new PropertyGreetingServiceImpl();
     }
 
     @Test
     public void testGreeting() throws Exception {
-        Assert.assertEquals(GreetingServiceImpl.HELLO, propertyInjectedController.sayHello());
+        Assert.assertEquals(PropertyGreetingServiceImpl.HELLO, propertyInjectedController.sayHello());
     }
 }

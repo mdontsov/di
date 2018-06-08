@@ -8,11 +8,15 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class PropertyInjectedController {
 
+    /*
+    * When Qualifier below IS NOT specified then invokes the bean marked as @Primary
+    * */
+
     @Autowired
-    @Qualifier("greetingServiceImpl") /* When Qualifier IS NOT specified then invokes the bean marked as @Primary */
-    public GreetingService greetingServiceImpl;
+    @Qualifier("propertyGreetingServiceImpl")
+    public GreetingService greetingService;
 
     public String sayHello() {
-        return greetingServiceImpl.sayGreeting();
+        return greetingService.sayGreeting();
     }
 }

@@ -9,8 +9,11 @@ public class ConstructorInjectedController {
 
     private GreetingService greetingService;
 
-    //Constructor based injection. Annotation here is optional
-    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
+    /*
+    * Constructor based injection. Annotation here is optional
+    * */
+
+    public ConstructorInjectedController(@Qualifier("constructorGreetingServiceImpl") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
